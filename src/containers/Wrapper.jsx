@@ -11,6 +11,8 @@ import { CountryList } from './CountryList';
 export const Wrapper = () => {
   const [filter, setFilter] = useState('');
 
+  const continents = ['africa', 'asia', 'europe', 'north america', 'oceania', 'south america'];
+
   const handleSelect = e => {
     setFilter(e);
   };
@@ -21,18 +23,26 @@ export const Wrapper = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <NavDropdown title="Change Continent" id="basic-nav-dropdown">
-              <NavDropdown.Item onSelect={() => { handleSelect('africa'); }}>Africa</NavDropdown.Item>
-              <NavDropdown.Item onSelect={() => { handleSelect('antartica'); }}>Antartica</NavDropdown.Item>
-              <NavDropdown.Item onSelect={() => { handleSelect('asia'); }}>Asia</NavDropdown.Item>
-              <NavDropdown.Item onSelect={() => { handleSelect('europe'); }}>Europe</NavDropdown.Item>
-              <NavDropdown.Item onSelect={() => { handleSelect('northamerica'); }}>North America</NavDropdown.Item>
-              <NavDropdown.Item onSelect={() => { handleSelect('oceania'); }}>Oceania</NavDropdown.Item>
-              <NavDropdown.Item onSelect={() => { handleSelect('southamerica'); }}>South America</NavDropdown.Item>
+            <NavDropdown
+              title="Change Continent"
+              id="basic-nav-dropdown"
+            >
+              {continents.map(c => (
+                <NavDropdown.Item
+                  onSelect={() => { handleSelect(c); }}
+                  key={c}
+                >
+                  {c}
+                </NavDropdown.Item>
+              ))}
             </NavDropdown>
           </Nav>
           <Form inline>
-            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
+            <FormControl
+              type="text"
+              placeholder="Search"
+              className="mr-sm-2"
+            />
             <Button variant="outline-success">Search</Button>
           </Form>
         </Navbar.Collapse>
