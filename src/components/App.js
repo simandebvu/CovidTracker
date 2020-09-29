@@ -1,14 +1,11 @@
 import React from 'react';
 import './App.css';
+import { NavBar } from './Navbar';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          COVID APP
-        </p>
-      </header>
+      <NavBar />
     </div>
   );
 }
