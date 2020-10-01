@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import Navbar from 'react-bootstrap/NavBar';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-import FormControl from 'react-bootstrap/FormControl';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
+import { Route, Switch, Link } from 'react-router-dom';
 import { JumboTron } from '../components/JumboTron';
 import { CountryList } from './CountryList';
+import { CountryDetail } from '../components/CountryDetail';
+import { Error } from '../components/Error';
 
 export const Wrapper = () => {
   const [filter, setFilter] = useState('');
@@ -17,41 +17,40 @@ export const Wrapper = () => {
     setFilter(e);
   };
   return (
-    <>
-      <Navbar bg="primary" variant="dark" expand="lg">
-        <Navbar.Brand href="#home">Covid Tracker</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
-            <NavDropdown
-              title="Change Continent"
-              id="basic-nav-dropdown"
+    <div className="d-flex flex-column my-5">
+      <Switch>
+        <Route path="/" component={Wrapper} exact>
+          <Navbar bg="primary" variant="dark" expand="lg" fixed="top">
+            <Link to="/"><div><Navbar.Brand>Covid Tracker</Navbar.Brand></div></Link>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Nav className="mr-auto
+        col-12"
             >
-              {continents.map(c => (
-                <NavDropdown.Item
-                  onSelect={() => { handleSelect(c); }}
-                  key={c}
-                >
-                  {c}
-                </NavDropdown.Item>
-              ))}
-            </NavDropdown>
-          </Nav>
-          <Form inline>
-            <FormControl
-              type="text"
-              placeholder="Search"
-              className="mr-sm-2"
-            />
-            <Button variant="outline-success">Search</Button>
-          </Form>
-        </Navbar.Collapse>
-      </Navbar>
-      <div className="container">
-        <JumboTron continent={filter} />
-        <CountryList continent={filter} />
-      </div>
-    </>
+              <NavDropdown
+                title="Change Continent"
+                id="basic-nav-dropdown"
+              >
+                {continents.map(c => (
+                  <NavDropdown.Item
+                    onSelect={() => { handleSelect(c); }}
+                    key={c}
+                  >
+                    {c}
+                  </NavDropdown.Item>
+                ))}
+              </NavDropdown>
+            </Nav>
+          </Navbar>
+          <div className="container my-5 my-md-2">
+            <JumboTron continent={filter} />
+            <CountryList continent={filter} />
+          </div>
+        </Route>
+        <Route path="/country/:countryname" component={CountryDetail} />
+        <Route component={Error} />
+      </Switch>
+
+    </div>
   );
 };
 
