@@ -1,17 +1,37 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import CountriesObj from '../objects/Countries';
+import { useSelector, useDispatch } from 'react-redux';
 import { Country } from '../components/Country';
+import { fetchStats } from '../actions/fetchStats';
 
 export const CountryList = ({ continent }) => {
-  const countries = CountriesObj.filter(c => c.continent.toLowerCase() === continent.toLowerCase());
+  const dispatch = useDispatch();
+  const getCurrentStats = () => { dispatch(fetchStats); };
+  useEffect(() => {
+    getCurrentStats();
+  }, []);
+
+  const stats = useSelector(state => state.covidApi);
+  const countries = useSelector(state => state.countryApi);
+
+  // if (stats.currentInfo) {
+  //   // console.log('stats', stats.currentInfo);
+  //   // console.log('countries', countries);
+  //   // const c = Object.assign({}, ...stats.currentInfo, ...countries);
+  //   // const distinct = merge(stats.currentInfo, countries, 'location');
+  //   // console.log(distinct);
+  //   const merge = (a, b, p) => a.filter(aa => !b.find(bb => aa[p] === bb[p])).concat(b);
+  // }
+  const filteredCountries = countries
+    .filter(c => c.continent.toLowerCase() === continent.toLowerCase());
+
   return (
     <div>
       <h2>Countries Listing </h2>
       <div className="d-flex flex-wrap justify-content-around">
-        {countries.map(c => (
+        {filteredCountries.map(c => (
           <Country
-            name={c.country}
+            name={c.location}
             key={c.id}
           />
         ))}
