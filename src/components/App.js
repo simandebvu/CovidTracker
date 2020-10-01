@@ -4,9 +4,7 @@ import { Wrapper } from '../containers/Wrapper';
 
 function App() {
   return (
-    <div className="App">
-      <Wrapper />
-    </div>
+    <Wrapper />
   );
 }
 
