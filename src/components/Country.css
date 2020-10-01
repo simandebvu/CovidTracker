@@ -1,3 +1,10 @@
-.card{
-    max-height: 200px;
+.card {
+  max-height: 200px;
+}
+
+a:hover,
+a:visited,
+a:link,
+a:active {
+  text-decoration: none;
 }
