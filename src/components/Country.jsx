@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Card from 'react-bootstrap/Card';
 import './Country.css';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
 
 export const Country = ({ name }) => {
   const stats = useSelector(state => state.covidApi);
@@ -30,6 +31,10 @@ export const Country = ({ name }) => {
       </Link>
     </div>
   );
+};
+
+Country.propTypes = {
+  name: PropTypes.string.isRequired,
 };
 
 export default Country;

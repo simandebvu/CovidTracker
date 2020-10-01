@@ -4,11 +4,10 @@ import Container from 'react-bootstrap/Container';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 export const CountryDetail = ({ match, location }) => {
   const curName = match.params.countryname;
-  // const details = stats.currentInfo.filter(i => i.location === curName)[0];
-  // const detail = details === undefined ? { active: '-' } : details;
   return (
     <div className="my-5">
       <Jumbotron className="container">
@@ -44,6 +43,11 @@ export const CountryDetail = ({ match, location }) => {
       </Jumbotron>
     </div>
   );
+};
+
+CountryDetail.propTypes = {
+  match: PropTypes.instanceOf(Object).isRequired,
+  location: PropTypes.instanceOf(Object).isRequired,
 };
 
 export default CountryDetail;

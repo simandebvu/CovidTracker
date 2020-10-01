@@ -11,17 +11,8 @@ export const CountryList = ({ continent }) => {
     getCurrentStats();
   }, []);
 
-  const stats = useSelector(state => state.covidApi);
   const countries = useSelector(state => state.countryApi);
 
-  // if (stats.currentInfo) {
-  //   // console.log('stats', stats.currentInfo);
-  //   // console.log('countries', countries);
-  //   // const c = Object.assign({}, ...stats.currentInfo, ...countries);
-  //   // const distinct = merge(stats.currentInfo, countries, 'location');
-  //   // console.log(distinct);
-  //   const merge = (a, b, p) => a.filter(aa => !b.find(bb => aa[p] === bb[p])).concat(b);
-  // }
   const filteredCountries = countries
     .filter(c => c.continent.toLowerCase() === continent.toLowerCase());
 

@@ -1,8 +1,3 @@
-/* .jumbotron {
-  border-radius: 0.5rem;
-  box-shadow: 10px 10px 22px 3px #d0cdce, -10px -10px 22px 3px #fffdff;
-  background: linear-gradient(151deg, #d0cdce, #fffdff);
-} */
 :root {
   --colorMain: #c0c0c0;
   --brShadow: -6px 6px 15px rgba(0, 0, 0, 0.5);

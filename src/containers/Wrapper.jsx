@@ -19,7 +19,7 @@ export const Wrapper = () => {
   return (
     <div className="d-flex flex-column my-5">
       <Switch>
-        <Route path="/" component={Wrapper} exact>
+        <Route path="/" exact>
           <Navbar bg="primary" variant="dark" expand="lg" fixed="top">
             <Link to="/"><div><Navbar.Brand>Covid Tracker</Navbar.Brand></div></Link>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -34,6 +34,7 @@ export const Wrapper = () => {
                   <NavDropdown.Item
                     onSelect={() => { handleSelect(c); }}
                     key={c}
+                    className="text-uppercase"
                   >
                     {c}
                   </NavDropdown.Item>
