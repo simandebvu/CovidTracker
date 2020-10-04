@@ -3,6 +3,7 @@
   --brShadow: -6px 6px 15px rgba(0, 0, 0, 0.5);
   --tlShadow: 6px -6px 15px rgba(255, 255, 255, 0.8);
 }
+
 .continent-name {
   color: var(--colorMain);
   font-size: 4.5em;
