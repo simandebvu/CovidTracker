@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import Navbar from 'react-bootstrap/NavBar';
 import Nav from 'react-bootstrap/Nav';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import { Route, Switch, Link } from 'react-router-dom';
 import { JumboTron } from '../components/JumboTron';
 import { CountryList } from './CountryList';
+import { Filter } from '../components/Filter';
 import { CountryDetail } from '../components/CountryDetail';
 import { Error } from '../components/Error';
 
@@ -26,20 +26,7 @@ export const Wrapper = () => {
             <Nav className="mr-auto
         col-12"
             >
-              <NavDropdown
-                title="Change Continent"
-                id="basic-nav-dropdown"
-              >
-                {continents.map(c => (
-                  <NavDropdown.Item
-                    onSelect={() => { handleSelect(c); }}
-                    key={c}
-                    className="text-uppercase"
-                  >
-                    {c}
-                  </NavDropdown.Item>
-                ))}
-              </NavDropdown>
+              <Filter onSelect={handleSelect} options={continents} />
             </Nav>
           </Navbar>
           <div className="container my-5 my-md-2">
