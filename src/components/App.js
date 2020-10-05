@@ -1,15 +1,9 @@
 import React from 'react';
-import './App.css';
+import { Wrapper } from '../containers/Wrapper';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          COVID APP
-        </p>
-      </header>
-    </div>
+    <Wrapper />
   );
 }
 

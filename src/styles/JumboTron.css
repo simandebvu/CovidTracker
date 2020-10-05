@@ -1,0 +1,23 @@
+:root {
+  --colorMain: #c0c0c0;
+  --brShadow: -6px 6px 15px rgba(0, 0, 0, 0.5);
+  --tlShadow: 6px -6px 15px rgba(255, 255, 255, 0.8);
+}
+
+.continent-name {
+  color: var(--colorMain);
+  font-size: 4.5em;
+  font-weight: bold;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  text-shadow: var(--brShadow), var(--tlShadow);
+  position: relative;
+}
+
+.continent-name::after {
+  left: -50px;
+  width: 200px;
+  height: 200px;
+  top: -200px;
+  box-shadow: var(--brShadow), var(--tlShadow);
+}

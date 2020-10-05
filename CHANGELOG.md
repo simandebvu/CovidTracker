@@ -8,3 +8,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.0] - 2020-09-10
 ### Added
+- Filtering By Continent
+- Get Total Active Cases on initial continent detail load
+- Share details On twitter functionality
+- React Tests Added for Components and the API
+
+### Fixed
+- Organized CSS Code
+- Created a Filter Component

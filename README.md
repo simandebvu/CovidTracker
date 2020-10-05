@@ -1,34 +1,35 @@
-# Calc-eat
+# Covid Tracker
 
 <br />
 <p align="center">
-  <a href="https://github.com/simandebvu/calc-eact/">
-    <img src="./public/logo192.png" alt="Logo" width="200" height="150">
+  <a href="https://github.com/simandebvu/CovidTracker/">
+    <img src="./public/logo192.png" alt="Logo" width="100" height="110">
   </a>
 
-  <h3 align="center">Calc-eact</h3>
+  <h3 align="center">Covid Tracker</h3>
 
   <p align="center">
     A React Based Project
     <br />
-    <a href="https://github.com/simandebvu/calc-eact/issues/"><strong>Issues »</strong></a>
+    <a href="https://github.com/simandebvu/CovidTracker/issues/"><strong>Issues »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/simandebvu/calc-eact/issues/">Report Bug</a>
+    <a href="https://github.com/simandebvu/CovidTracker/issues/">Report Bug</a>
     ·
-    <a href="https://github.com/simandebvu/calc-eact/">Request Feature</a>
+    <a href="https://github.com/simandebvu/CovidTracker/">Request Feature</a>
   </p>
 </p>
 
-> A calculator for Math-magicians Inc using create-react-app, a tool built by developers at Facebook to help you build React applications, saving you from time-consuming setup and configuration.
+>  A catalogue of statistics for covid19, a browsable list of items that you can filter and access to the details of one country. It consists of two pages, bundled with the react router - that shows details and filter-able global views of countries.
 
 ## Table Of Contents
 
-- [Calc-eat](#calc-eat)
+- [Covid Tracker](#covid-tracker)
   - [Table Of Contents](#table-of-contents)
   - [Built With](#built-with)
   - [Usage](#usage)
   - [Live Demo](#live-demo)
+  - [Live Video Presentation](#live-video-presentation)
   - [Authors](#authors)
   - [🤝 Contributing](#-contributing)
   - [Show your support](#show-your-support)
@@ -43,6 +44,9 @@
 - React
 - React-DOM
 - React-Create-App
+- React Hooks
+- Jest
+- React Testing Library
 - npm
 - CSS
 - ES6
@@ -50,14 +54,14 @@
 ## Usage
 
 To have this app on your pc, you need to:
-* [download](https://github.com/simandebvu/calc-eact/archive/development.zip) or clone this repo:
+* [download](https://github.com/simandebvu/CovidTracker/archive/development.zip) or clone this repo:
   - Clone with SSH:
   ```
-    git@github.com:simandebvu//calc-eact.git
+    git@github.com:simandebvu/CovidTracker.git
   ```
   - Clone with HTTPS
   ```
-    https://github.com/simandebvu/calc-eact.git
+    https://github.com/simandebvu/CovidTracker.git
   ```
 
 * In the project directory, you can run:
@@ -77,7 +81,11 @@ To have this app on your pc, you need to:
  
 ## Live Demo 
 
-[Live Demo Link](#) :point_left:
+[Live Demo Link](https://covid-tracker-sm.netlify.app) :point_left:
+
+## Live Video Presentation 
+
+[Live Video Link](https://www.loom.com/share/d19246c5eb2f46e987e443c314ca052f) :point_left:
 
 
 ## Authors
