@@ -10,7 +10,7 @@ describe('JUMBOTRON -> Component Test', () => {
     expect(getByTestId('continent-jumbotron')).toHaveTextContent('africa');
   });
   it('correctly says choose above if no continent', () => {
-    const { getByTestId } = render(<Jumbotron className="container" ancontinent="anafrica" />);
+    const { getByTestId } = render(<Jumbotron className="container" continent="" />);
     expect(getByTestId('continent-jumbotron')).toHaveTextContent('CHOOSE ABOVE');
   });
 });
