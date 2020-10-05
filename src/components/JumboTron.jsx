@@ -1,5 +1,5 @@
 import React from 'react';
-import './JumboTron.css';
+import '../styles/JumboTron.css';
 import PropTypes from 'prop-types';
 
 export const JumboTron = ({ continent }) => (
